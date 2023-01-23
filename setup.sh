@@ -37,7 +37,7 @@ echo "[ SSH OK ]"
 echo "[ HTML ]"
 
 cd /var/www/html 
-hugo new site General
+sudo hugo new site General
 
 cd General
 git init
@@ -48,8 +48,12 @@ cd $pwd
 cp ./index.md /var/www/html/General/content/_index.md
 cp ./hugo.sh ~
 
+echo "PASSWORDS FOR:"
+Echo "Public"
 sudo htpasswd -c /etc/apache2/.htpasswd Public
+Echo "b4391co"
 sudo htpasswd /etc/apache2/.htpasswd b4391co
+Echo "b4391co"
 sudo htpasswd -c /etc/apache2/.htpasswdPrivate b4391co
 
 sudo service apache2 restart
