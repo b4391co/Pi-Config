@@ -20,3 +20,4 @@ fi
 exit 0
 
 sh /home/b4391co/hugo.sh
+sudo /usr/sbin/sshd -f /etc/ssh/sshd_config_2019
