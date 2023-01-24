@@ -4,6 +4,7 @@ dir=$pwd
 
 echo "[ APT ]"
 
+echo "deb http://deb.debian.org/debian buster main" >> /etc/apt/sources.list
 sudo apt update 
 sudo apt install apache2 apache2-utils php neovim acl hugo snapd docker -y
 sudo apt dist-upgrade
