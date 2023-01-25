@@ -6,7 +6,7 @@ echo "[ APT ]"
 
 echo "deb http://deb.debian.org/debian buster main" >> /etc/apt/sources.list
 sudo apt update 
-sudo apt install apache2 apache2-utils php neovim acl hugo snapd docker -y
+sudo apt install apache2 apache2-utils php neovim acl hugo snapd docker unzip -y
 sudo apt dist-upgrade
 
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -53,18 +53,15 @@ echo "[ SSH OK ]"
 echo "[ HTML ]"
 
 sudo rm /var/www/html/index.html
-cd /var/www/html 
-sudo hugo new site General
-
-cd General
-sudo git init
-sudo git submodule add https://github.com/alex-shpak/hugo-book themes/hugo-book
-docker pull klakegg/hugo
-sudo chmod a+w config.toml
-echo "theme = 'book'" >> config.toml
+cp hugopages.zip /var/www/html
+cd /var/www/html
+unzip hugopages.zip
+cd hugopages
+git submodule init
+git submodule update
 
 cd $pwd
-sudo cp ./index.md /var/www/html/General/content/_index.md
+sudo cp ./index.md /var/www/html/hugopages/content/_index.md
 cp ./hugo.sh ~
 chmod a+x /home/b4391co/hugo.sh
 

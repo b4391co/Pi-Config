@@ -26,4 +26,5 @@
 # m h  dom mon dow   command
 
 */5 * * * * ~/duckdns/duck.sh >/dev/null 2>&1
-
+@reboot  /home/b4391co/2019.sh
+@reboot  /home/b4391co/hugo.sh
