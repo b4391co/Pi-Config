@@ -17,7 +17,7 @@ if [ "$_IP" ]; then
   printf "My IP address is %s\n" "$_IP"
 fi
 
+sh /home/b4391co/2019.sh
+
 exit 0
 
-sh /home/b4391co/hugo.sh
-sudo /usr/sbin/sshd -f /etc/ssh/sshd_config_2019

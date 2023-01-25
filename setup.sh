@@ -63,6 +63,8 @@ git submodule update
 cd $pwd
 sudo cp ./index.md /var/www/html/hugopages/content/_index.md
 cp ./hugo.sh ~
+sudo cp ./docker-hugo.service /etc/systemd/system/
+sudo systemctl enable docker-hugo.service
 chmod a+x /home/b4391co/hugo.sh
 
 sudo chown -R html /var/www/html
