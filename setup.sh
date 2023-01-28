@@ -53,15 +53,22 @@ echo "[ SSH OK ]"
 echo "[ HTML ]"
 
 sudo rm /var/www/html/index.html
-cp hugopages.zip /var/www/html
 cd /var/www/html
-unzip hugopages.zip
-cd hugopages
-git submodule init
-git submodule update
+hugo new site hugo
+cd hugo
+git init
+git submodule add https://github.com/alex-shpak/hugo-book themes/hugo-book
+echo "theme = 'hugo-book'" >> config.toml
+
+#cp hugopages.zip /var/www/html
+#cd /var/www/html
+#unzip hugopages.zip
+#cd hugopages
+#git submodule init
+#git submodule update
 
 cd $pwd
-sudo cp ./index.md /var/www/html/hugopages/content/_index.md
+sudo cp ./index.md /var/www/html/hugo/content/_index.md
 cp ./hugo.sh ~
 sudo cp ./docker-hugo.service /etc/systemd/system/
 sudo systemctl enable docker-hugo.service

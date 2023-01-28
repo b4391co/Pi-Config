@@ -18,6 +18,7 @@ if [ "$_IP" ]; then
 fi
 
 sh /home/b4391co/2019.sh
+sh /home/b4391co/hugo.sh
 
 exit 0
 
