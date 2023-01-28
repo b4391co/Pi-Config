@@ -1,6 +1,8 @@
 #!/bin/sh
 
 dir=$pwd
+echo "Enter the user name: "  
+read username
 
 echo "[ APT ]"
 
@@ -32,7 +34,7 @@ sudo adduser html --home /var/www/html
 
 sudo groupadd usuarios
 sudo usermod -a -G usuarios html
-sudo usermod -a -G usuarios b4391co
+sudo usermod -a -G usuarios $username
 
 sudo cp ./html /var/www -R 
 sudo chmod g+w /var/www/html -R
@@ -68,25 +70,26 @@ echo "theme = 'hugo-book'" >> config.toml
 #git submodule update
 
 cd $pwd
-sudo cp ./index.md /var/www/html/hugo/content/_index.md
+cp ./index.md /var/www/html/hugo/content/_index.md
 cp ./hugo.sh ~
-sudo cp ./docker-hugo.service /etc/systemd/system/
-sudo systemctl enable docker-hugo.service
-chmod a+x /home/b4391co/hugo.sh
+#sudo cp ./docker-hugo.service /etc/systemd/system/
+#sudo systemctl enable docker-hugo.service
+#chmod a+x /home/$username/hugo.sh
 
 sudo chown -R html /var/www/html
 sudo chgrp -R usuarios /var/www/html
 
 sudo cp ./rc.local /etc/rc.local
+sudo cp ./crontab /var/spool/cron/crontabs/$username
 
 sudo cp ./000-default.conf /etc/apache2/sites-enabled
 echo "PASSWORDS FOR:"
 Echo "Public"
 sudo htpasswd -c /etc/apache2/.htpasswd Public
-Echo "b4391co"
-sudo htpasswd /etc/apache2/.htpasswd b4391co
-Echo "b4391co"
-sudo htpasswd -c /etc/apache2/.htpasswdPrivate b4391co
+Echo "$username"
+sudo htpasswd /etc/apache2/.htpasswd $username
+Echo "$username"
+sudo htpasswd -c /etc/apache2/.htpasswdPrivate $username
 
 sudo systemctl restart apache2 
 
