@@ -1,8 +1,10 @@
 #!/bin/sh
 
-dir=$pwd
 echo "Enter the user name: "  
 read username
+
+dir=$pwd
+home=/home/$username
 
 echo "[ APT ]"
 
@@ -71,7 +73,7 @@ echo "theme = 'hugo-book'" >> config.toml
 
 cd $pwd
 cp ./index.md /var/www/html/hugo/content/_index.md
-cp ./hugo.sh ~
+cp ./hugo.sh $home
 #sudo cp ./docker-hugo.service /etc/systemd/system/
 #sudo systemctl enable docker-hugo.service
 #chmod a+x /home/$username/hugo.sh
