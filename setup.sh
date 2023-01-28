@@ -84,11 +84,11 @@ sudo cp ./crontab /var/spool/cron/crontabs/$username
 
 sudo cp ./000-default.conf /etc/apache2/sites-enabled
 echo "PASSWORDS FOR:"
-Echo "Public"
+echo "Public"
 sudo htpasswd -c /etc/apache2/.htpasswd Public
-Echo "$username"
+echo "$username"
 sudo htpasswd /etc/apache2/.htpasswd $username
-Echo "$username"
+echo "$username"
 sudo htpasswd -c /etc/apache2/.htpasswdPrivate $username
 
 sudo systemctl restart apache2 
