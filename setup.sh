@@ -38,6 +38,8 @@ sudo groupadd usuarios
 sudo usermod -a -G usuarios html
 sudo usermod -a -G usuarios $username
 
+
+
 sudo cp ./html /var/www -R 
 sudo chmod g+w /var/www/html -R
 
@@ -58,6 +60,8 @@ echo "[ HTML ]"
 
 sudo rm /var/www/html/index.html
 cd /var/www/html
+mkdir files
+mkdir filesPrivate
 hugo new site hugo
 cd hugo
 git init
@@ -92,6 +96,8 @@ echo "$username"
 sudo htpasswd /etc/apache2/.htpasswd $username
 echo "$username"
 sudo htpasswd -c /etc/apache2/.htpasswdPrivate $username
+
+sudo echo "User html" >> /etc/apache2/apache2.conf
 
 sudo systemctl restart apache2 
 

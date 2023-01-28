@@ -97,7 +97,7 @@
                                             </h4>
                                         </div>
                                     </a>
-                                    <a href="./wake-on-lan.php-master" class="u-align-center u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-3">
+                                    <a href="./wake-on-lan.php-master/wake-on-lan.php" class="u-align-center u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-3">
                                         <div class="u-container-layout u-similar-container u-valign-top u-container-layout-4"><span class="u-icon u-icon-circle u-palette-5-light-2 u-text-palette-1-base u-icon-3"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-d0f5"></use></svg><svg class="u-svg-content" viewBox="0 0 512 512" x="0px" y="0px" id="svg-d0f5" style="enable-background:new 0 0 512 512;"><g><g><path d="M0,15.845v420.259h164.332v30.049h-30.036v30.001h243.407v-30.001h-30.036v-30.049H512V15.845H0z M317.665,466.153    H194.334v-30.049h123.332V466.153z M481.999,406.103H30.001v-60.075h451.997V406.103z M481.999,316.027H30.001V45.847h451.997    V316.027z"></path>
 </g>
 </g><g><g><polygon points="203.943,126.712 182.729,105.498 107.29,180.937 182.729,256.375 203.943,235.161 149.718,180.937   "></polygon>
@@ -110,7 +110,7 @@
                                             <h4 class="u-align-center u-text u-text-3" data-lang-en="development">ENCENDER</h4>
                                         </div>
                                     </a>
-                                    <a href="" class="u-align-center u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-4">
+                                    <a href="http://b4391co.duckdns.org:1313/" class="u-align-center u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-4">
                                         <div class="u-container-layout u-similar-container u-valign-top u-container-layout-5"><span class="u-icon u-icon-circle u-palette-5-light-2 u-icon-4"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 60 60" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-9569"></use></svg><svg class="u-svg-content" viewBox="0 0 60 60" x="0px" y="0px" id="svg-9569" style="enable-background:new 0 0 60 60;"><g><path d="M42.5,22h-25c-0.552,0-1,0.447-1,1s0.448,1,1,1h25c0.552,0,1-0.447,1-1S43.052,22,42.5,22z"></path><path d="M17.5,16h10c0.552,0,1-0.447,1-1s-0.448-1-1-1h-10c-0.552,0-1,0.447-1,1S16.948,16,17.5,16z"></path><path d="M42.5,30h-25c-0.552,0-1,0.447-1,1s0.448,1,1,1h25c0.552,0,1-0.447,1-1S43.052,30,42.5,30z"></path><path d="M42.5,38h-25c-0.552,0-1,0.447-1,1s0.448,1,1,1h25c0.552,0,1-0.447,1-1S43.052,38,42.5,38z"></path><path d="M42.5,46h-25c-0.552,0-1,0.447-1,1s0.448,1,1,1h25c0.552,0,1-0.447,1-1S43.052,46,42.5,46z"></path><path d="M38.914,0H6.5v60h47V14.586L38.914,0z M39.5,3.414L50.086,14H39.5V3.414z M8.5,58V2h29v14h14v42H8.5z"></path>
 </g></svg></span>
                                             <h4 class="u-align-center u-text u-text-4" data-lang-en="testing">GENERAL</h4>
