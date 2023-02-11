@@ -1,7 +1,11 @@
 #!/bin/sh
 
-echo "Enter the user name: "  
-read username
+username=`whoami`
+
+echo "Interface:"
+read interface
+
+ip="/usr/sbin/ifconfig $interface | grep "inet " | awk '{print $2}'"
 
 dir=$pwd
 home=/home/$username
@@ -39,7 +43,8 @@ sudo usermod -a -G usuarios html
 sudo usermod -a -G usuarios $username
 
 
-
+cp ./hugo.sh ~/
+chmod a+x ~/hugo.sh
 sudo cp ./html /var/www -R 
 sudo chmod g+w /var/www/html -R
 
@@ -68,19 +73,7 @@ git init
 git submodule add https://github.com/alex-shpak/hugo-book themes/hugo-book
 echo "theme = 'hugo-book'" >> config.toml
 
-#cp hugopages.zip /var/www/html
-#cd /var/www/html
-#unzip hugopages.zip
-#cd hugopages
-#git submodule init
-#git submodule update
-
 cd $pwd
-cp ./index.md /var/www/html/hugo/content/_index.md
-cp ./hugo.sh $home
-#sudo cp ./docker-hugo.service /etc/systemd/system/
-#sudo systemctl enable docker-hugo.service
-#chmod a+x /home/$username/hugo.sh
 
 sudo chown -R html /var/www/html
 sudo chgrp -R usuarios /var/www/html
@@ -100,6 +93,9 @@ sudo htpasswd -c /etc/apache2/.htpasswdPrivate $username
 sudo echo "User html" >> /etc/apache2/apache2.conf
 
 sudo systemctl restart apache2 
+sed -i "s/!!!USER!!!/$username/g" /etc/rc.local
+sed -i "s/!!!USER!!!/$username/g" /var/spool/cron/crontabs/$username
+sed -i "s/!!!USER!!!/$username/g" ~/hugo.sh
 
 echo "[ HTML OK ]"
 

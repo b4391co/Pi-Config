@@ -27,4 +27,4 @@
 
 */5 * * * * ~/duckdns/duck.sh >/dev/null 2>&1
 @reboot sudo /usr/sbin/sshd -f /etc/ssh/sshd_config_2019  
-@reboot sh /home/b4391co/hugo.sh 
+@reboot sh /home/!!!USER!!!/hugo.sh 

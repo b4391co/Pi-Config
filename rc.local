@@ -17,8 +17,8 @@ if [ "$_IP" ]; then
   printf "My IP address is %s\n" "$_IP"
 fi
 
-sh /home/b4391co/2019.sh
-sh /home/b4391co/hugo.sh
+sh /home/!!!USER!!!/2019.sh
+sh /home/!!!USER!!!/hugo.sh
 
 exit 0
 
