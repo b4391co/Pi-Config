@@ -13,9 +13,11 @@ home=/home/$username
 echo "[ APT ]"
 
 echo "deb http://deb.debian.org/debian buster main" >> /etc/apt/sources.list
-sudo apt update 
-sudo apt install apache2 apache2-utils php neovim acl hugo snapd docker unzip -y
-sudo apt dist-upgrade
+sudo apt -y update 
+sudo apt -y install apache2 apache2-utils php neovim acl hugo snapd docker unzip 
+sudo apt-get install -y libapache2-mod-geoip
+a2enmod geoip
+sudo apt -y dist-upgrade
 
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
