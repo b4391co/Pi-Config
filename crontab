@@ -26,5 +26,5 @@
 # m h  dom mon dow   command
 
 */5 * * * * ~/duckdns/duck.sh >/dev/null 2>&1
-@reboot sudo /usr/sbin/sshd -f /etc/ssh/sshd_config_2019  
+@reboot sudo iptables -t nat -A POSTROUTING -s 10.144.199.0/24 -o eth0 -j MASQUERADE
 @reboot sh /home/!!!USER!!!/hugo.sh 
