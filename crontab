@@ -25,6 +25,8 @@
 #
 # m h  dom mon dow   command
 
-*/5 * * * * ~/duckdns/duck.sh >/dev/null 2>&1
-@reboot sudo iptables -t nat -A POSTROUTING -s 10.144.199.0/24 -o eth0 -j MASQUERADE
-@reboot sh /home/!!!USER!!!/hugo.sh 
+*/5 * * * * /home/!!!USER!!!/duckdns/duck.sh >/dev/null 2>&1
+@reboot sh /home/!!!USER!!!/hugo.sh
+@reboot sudo iptables -t nat -A POSTROUTING -s !!!IP!!!/24 -o eth0 -j MASQUERADE
+@reboot sh /home/mails/start.py
+0 0 * * * /sbin/shutdown -r now

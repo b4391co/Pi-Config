@@ -1,1 +1,0 @@
-sudo /usr/sbin/sshd -f sshd_config_2019
