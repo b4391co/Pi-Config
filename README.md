@@ -1,10 +1,6 @@
-██████╗░██╗░░░░░░░█████╗░░█████╗░███╗░░██╗███████╗██╗░██████╗░
-██╔══██╗██║░░░░░░██╔══██╗██╔══██╗████╗░██║██╔════╝██║██╔════╝░
-██████╔╝██║█████╗██║░░╚═╝██║░░██║██╔██╗██║█████╗░░██║██║░░██╗░
-██╔═══╝░██║╚════╝██║░░██╗██║░░██║██║╚████║██╔══╝░░██║██║░░╚██╗
-██║░░░░░██║░░░░░░╚█████╔╝╚█████╔╝██║░╚███║██║░░░░░██║╚██████╔╝
-╚═╝░░░░░╚═╝░░░░░░░╚════╝░░╚════╝░╚═╝░░╚══╝╚═╝░░░░░╚═╝░╚═════╝░
- 
+# PI CONFIG
+Script de configuración de Raspberry Pi con **Servidor Apache** **Hugo Pages** **DUCK DNS** **WEB CON USUARIOS Y CONTRASEÑA APACHE PARA ARCHIVOS** **ENCENDER ORDENADOR DE FORMA REMOTA** **VPN con PIVPN**
+
 ```sh
 git clone https://github.com/b4391co/Pi-config
 ```
