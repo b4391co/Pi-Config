@@ -24,27 +24,7 @@ echo "Interface:"
 read interface
 
 
-echo "introducir direcciones para logs por mail (y/n):"
-read c_mail
 
-if [ $c_mail = "y" ]
-then
-    echo "mail emisor:"
-    read e_mail
-    echo "password:"
-    read p_mail
-    echo "repeat password:"
-    read p2_mail
-    while [ $p_mail != $p2_mail ] 
-    do
-        echo "password:"
-        read p_mail
-        echo "repeat password:"
-        read p2_mail
-    done
-    echo "mail receptor:"
-    read r_mail
-fi   
 
 
 
@@ -125,38 +105,6 @@ setfacl -m user:html:--- /usr/bin/
 systemctl restart ssh 
 
 echo "[ SSH OK ]"
-echo "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――"
-echo ""
-sleep 1
-cls
-
-echo "[ MAIL ]"
-echo "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――"
-echo ""
-sleep 1
-
-# e_mail p_mail r_mail
-
-apt install -y python3-pip
-pip install secure-smtplib
-mkdir /etc/mails 
-cp mails/* /etc/mails
-chown -R root /etc/mails 
-chmod -R 755 /etc/mails 
-sed -i "s/!!!C_EMISOR!!!/$e_mail/g" ~/mails/datos.py
-sed -i "s/!!!C_RECEPTOR!!!/$r_mail/g" ~/mails/datos.py
-sed -i "s/!!!PASSWORD!!!/$p_mail/g" ~/mails/datos.py
-
-echo 'python /etc/mails/enviar-ssh.py' >> ~/.bashrc
-echo '
-if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
-    python ~/etc/mails/enviar-ssh.py
-fi' >> $home/.bashrc
-
-cd $pwd
-
-
-echo "[ MAIL OK ]"
 echo "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――"
 echo ""
 sleep 1
