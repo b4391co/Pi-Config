@@ -31,7 +31,7 @@ then
     echo "bot_token:"
     read bot_token
     echo "group_id:"
-    read p_mail
+    read group_id
     sed -i "s/!!!bot_token!!!/$bot_token/g" mails/config.py
     sed -i "s/!!!group_id!!!/$group_id/g" mails/config.py
     echo "@reboot python /etc/telegram/start.py" >> crontab
