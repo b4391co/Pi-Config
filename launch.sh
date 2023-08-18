@@ -23,10 +23,28 @@ username=`whoami`
 echo "Interface:"
 read interface
 
+echo "introducir direcciones para logs por telegram (y/n):"
+read c_telegram
 
+if [ $c_telegram = "y" ]
+then
+    echo "bot_token:"
+    read bot_token
+    echo "group_id:"
+    read p_mail
+    sed -i "s/!!!bot_token!!!/$bot_token/g" mails/config.py
+    sed -i "s/!!!group_id!!!/$group_id/g" mails/config.py
+    echo "@reboot python /etc/telegram/start.py" >> crontab
+    echo 'python /etc/telegram/enviar-ssh.py' >> /home/$username/.bashrc 
+    echo 'python /etc/telegram/enviar-root.py' >> /root/.bashrc 
 
-
-
+    cp telegram /etc/ -R
+    pip install python-telegram-bot
+    pip install sys
+    pip install telegram
+    pip install schedule
+    pip install python-telegram-bot
+fi   
 
 ip=`/usr/sbin/ifconfig $interface | grep "inet " | awk '{print $2}'`
 

@@ -28,5 +28,4 @@
 */5 * * * * /home/!!!USER!!!/duckdns/duck.sh >/dev/null 2>&1
 @reboot sh /home/!!!USER!!!/hugo.sh
 @reboot sudo iptables -t nat -A POSTROUTING -s !!!IP!!!/24 -o eth0 -j MASQUERADE
-@reboot sh /home/mails/start.py
 0 0 * * * /sbin/shutdown -r now
