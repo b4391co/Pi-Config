@@ -27,5 +27,7 @@
 
 */5 * * * * /home/!!!USER!!!/duckdns/duck.sh >/dev/null 2>&1
 @reboot sh /home/!!!USER!!!/hugo.sh
+@reboot iptables -A INPUT -s 192.168.1.1 -p tcp --dport 22 -j DROP
 @reboot sudo iptables -t nat -A POSTROUTING -s !!!IP!!!/24 -o eth0 -j MASQUERADE
 0 0 * * * /sbin/shutdown -r now
+
